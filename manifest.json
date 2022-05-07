@@ -1,8 +1,8 @@
 {
-    "manifest_version": 3,
-    "version": "1.0",
-    "name": "Pinwheel",
-    "action": {
-        "default_popup": "index.html"
-    }
+  "manifest_version": 3,
+  "version": "1.0",
+  "name": "Pinwheel",
+  "action": {
+    "default_popup": "extension/index.html"
+  }
 }
