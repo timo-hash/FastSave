@@ -5,6 +5,10 @@
     font-family: 'Poppins', sans-serif;
 }
 
+body {
+    background-color: black;
+}
+
 input {
     background-color: white;
     border: none;
@@ -25,7 +29,9 @@ input:focus {
 }
 
 .btn {
-    margin: 4px;
+    margin: 4px 4px 4px 0;
+    font-weight: bolder;
+    font-size: 1.5em;
 }
 
 .fa {
