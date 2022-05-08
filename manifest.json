@@ -4,5 +4,6 @@
   "name": "Pinwheel",
   "action": {
     "default_popup": "extension/index.html"
-  }
+  },
+  "permissions": ["tabs"]
 }
