@@ -1,27 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-  <body>
-    <input type="text" id="name" placeholder="Company name" />
-    <input type="text" id="position" placeholder="Position" />
-    <input type="text" id="website" placeholder="Link to site" />
-    <input type="date" id="date" />
-    <button id="save-btn">SAVE</button>
-    <button id="gen-site-btn">GENERATE WEBSITE</button>
-    <button id="rm-all-btn">REMOVE ALL</button>
 
-    <table id="table">
-      <tr>
-        <th>Company</th>
-        <th>Position</th>
-        <th>Closing Date</th>
-      </tr>
-    </table>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="index.css">
+  <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
 
-    <script src="index.js"></script>
-  </body>
+<body style="width: 500px" style="border-radius: 50%;">
+  <div class="container rounded" style="width: 500px; background-color: #1a202c; color: white;">
+    <div class="row">
+      <div class="col" style="border-right: 1px solid white;">
+        <div class="p-2 text-center">
+          <h1>Save Job</h1>
+        </div>
+        <div class="job-input p-1">
+          <input class="text " type="text" id="name" placeholder="Company name" />
+          <input class="text" type="text" id="position" placeholder="Position" />
+          <input class="text" type="text" id="website" placeholder="Link to site" />
+          <input class="text" type="date" id="date" />
+        </div>
+        <div class="p-2">
+          <button class="btn btn-success" id="save-btn">SAVE</button>
+          <button class="btn btn-info" id="gen-site-btn">Extract Info</button>
+          <button class="btn btn-secondary" id="rm-all-btn">Clear ALL</button>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="col">
+          <div class="p-1 text-center">
+            <h1>Wishlist</h1>
+          </div>
+        </div>
+        <div class="col">
+          <div class="p-1 text-center">
+            <h1>Wishlist</h1>
+          </div>
+        </div>
+        <div class="col">
+          <div class="p-1 text-center">
+            <h1>Wishlist</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</body>
+
 </html>
