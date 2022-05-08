@@ -1,70 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="index.css" />
-    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  </head>
 
-  <body style="width: 500px" style="border-radius: 50%">
-    <div
-      class="container rounded"
-      style="width: 500px; background-color: #1a202c; color: white"
-    >
-      <div class="row">
-        <div class="col" style="border-right: 1px solid white">
-          <div class="p-2 text-center">
-            <h1>Save Job</h1>
-          </div>
-          <div class="job-input p-1">
-            <input
-              class="text"
-              type="text"
-              id="name"
-              placeholder="Company name"
-            />
-            <input
-              class="text"
-              type="text"
-              id="position"
-              placeholder="Position"
-            />
-            <input
-              class="text"
-              type="text"
-              id="website"
-              placeholder="Link to site"
-            />
-            <input class="text" type="date" id="date" />
-          </div>
-          <div class="p-2">
-            <button class="btn btn-success" id="save-btn">SAVE</button>
-            <button class="btn btn-info" id="gen-site-btn">Extract Info</button>
-            <button class="btn btn-secondary" id="rm-all-btn">Clear ALL</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="index.css">
+  <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body style="width: 500px" style="border-radius: 50%;">
+  <div class="container rounded" style="width: 500px; background-color: #1a202c; color: white;">
+    <div class="row">
+      <div class="col" style="border-right: 1px solid white;">
+        <div class="p-2 text-center">
+          <h1>Save Job</h1>
+        </div>
+        <div class="job-input p-1">
+          <input class="text " type="text" id="name" placeholder="Company name" />
+          <input class="text" type="text" id="position" placeholder="Position" />
+          <input class="text" type="text" id="website" placeholder="Link to site" />
+          <input class="text" type="date" id="date" />
+        </div>
+        <div class="p-2">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <input type="checkbox" aria-label="Checkbox for following text input">
+              </div>
+            </div>
+            <div class="px-2">
+              <p>Wishlist</p>
+            </div>
           </div>
         </div>
+        <div class="px-2">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <input type="checkbox" aria-label="Checkbox for following text input">
+              </div>
+            </div>
+            <div class="px-2">
+              <p>Applied</p>
+            </div>
+          </div>
+        </div>
+        <div class="p-2">
+          <button class="btn btn-success" id="save-btn">SAVE</button>
+          <button class="btn btn-info" id="gen-site-btn">Extract Info</button>
+          <button class="btn btn-secondary" id="rm-all-btn">Clear ALL</button>
+        </div>
+      </div>
 
-        <div class="col">
-          <div class="col">
-            <div class="p-1 text-center">
-              <h1>Wishlist</h1>
-            </div>
+      <div class="col p-1">
+        <div class="col border">
+          <div class="p-1 text-center">
+            <h3>Wishlist</h3>
           </div>
-          <div class="col">
-            <div class="p-1 text-center">
-              <h1>Wishlist</h1>
-            </div>
+          <div>
+            <ol>
+              <li>Application 1</li>
+              <li>Application 1</li>
+              <li>Application 1</li>
+            </ol>
           </div>
-          <div class="col">
-            <div class="p-1 text-center">
-              <h1>Wishlist</h1>
-            </div>
+        </div>
+        <div class="col border">
+          <div class="p-1 text-center">
+            <h3>Applied</h3>
+          </div>
+          <div>
+            <ol>
+              <li>Application 1</li>
+              <li>Application 1</li>
+              <li>Application 1</li>
+            </ol>
+          </div>
+        </div>
+        <div class="col border">
+          <div class="p-1 text-center">
+            <h3>Offer</h3>
+          </div>
+          <div>
+            <ol>
+              <li>Application 1</li>
+              <li>Application 1</li>
+              <li>Application 1</li>
+            </ol>
+          </div>
+        </div>
+        <div class="col border">
+          <div class="p-1 text-center">
+            <h3>Rejected</h3>
+          </div>
+          <div>
+            <ol>
+              <li>Application 1</li>
+              <li>Application 1</li>
+              <li>Application 1</li>
+            </ol>
           </div>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+  <!-- <script src="../bootstrap/js/bootstrap.bundle.js"></script>
+  <script src="../bootstrap/js/popper.min.js"></script> -->
+</body>
+
 </html>
