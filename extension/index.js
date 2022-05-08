@@ -7,14 +7,8 @@ const delBtn = document.getElementById("rm-all-btn");
 const genSiteBtn = document.getElementById("gen-site-btn");
 
 const myTable = document.getElementById("table");
-// const tableFromLocalStorage = JSON.parse(localStorage.getItem("myTable"));
 
 render();
-
-// if (tableFromLocalStorage) {
-//   myTable = tableFromLocalStorage;
-//     render();
-// }
 
 function render() {
   var row = myTable.insertRow(1);
@@ -29,9 +23,6 @@ function render() {
 }
 
 saveBtn.addEventListener("click", function () {
-  render();
-  //   var vtable = $("#table").tableToJSON();
-  //   localStorage.setItem("myTable", JSON.stringify(myTable));
   name.value = "";
   position.value = "";
   date.value = "";
