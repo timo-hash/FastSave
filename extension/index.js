@@ -1,4 +1,4 @@
-const name = document.getElementById("name");
+const cname = document.getElementById("name");
 const position = document.getElementById("position");
 const website = document.getElementById("website");
 const date = document.getElementById("date");
@@ -11,24 +11,44 @@ const myTable = document.getElementById("table");
 render();
 
 function render() {
-  let row = myTable.insertRow(1);
+  retrieveData();
 
-  let cellName = row.insertCell(0);
-  let cellPosition = row.insertCell(1);
-  let cellDate = row.insertCell(2);
+  for (let i = 0; i < arr.length; i++) {
+    let row = myTable.insertRow();
 
-  cellName.innerHTML = name.value;
-  cellPosition.innerHTML = position.value;
-  cellDate.innerHTML = date.value;
+    let cellName = row.insertCell();
+    let cellPosition = row.insertCell();
+    let cellDate = row.insertCell();
+    cellName.innerHTML = arr[i].name;
+    cellPosition.innerHTML = arr[i].position;
+    cellDate.innerHTML = arr[i].date;
+  }
 }
 
+var arr = new Array();
 saveBtn.addEventListener("click", function () {
+  retrieveData();
+  arr.push({
+    name: cname.value,
+    position: position.value,
+    date: date.value,
+  });
+
+  localStorage.setItem("localData", JSON.stringify(arr));
   render();
   numberOfRows += 1;
-  name.value = "";
+  cname.value = "";
   position.value = "";
   date.value = "";
 });
+
+function retrieveData() {
+  let str = localStorage.getItem("localData");
+
+  if (str != null) {
+    arr = JSON.parse(str);
+  }
+}
 
 genSiteBtn.addEventListener("click", function () {
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
@@ -42,4 +62,6 @@ delBtn.addEventListener("click", function () {
     myTable.deleteRow(1);
     numberOfRows -= 1;
   }
+
+  localStorage.clear();
 });
