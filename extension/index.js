@@ -5,27 +5,13 @@ const date = document.getElementById("date");
 const saveBtn = document.getElementById("save-btn");
 const delBtn = document.getElementById("rm-all-btn");
 const genSiteBtn = document.getElementById("gen-site-btn");
+const myTable = document.getElementById("table");
 
 let numberOfRows = 0;
-const myTable = document.getElementById("table");
-render();
+let arr = new Array();
+// render();
 
-function render() {
-  retrieveData();
-
-  for (let i = 0; i < arr.length; i++) {
-    let row = myTable.insertRow();
-
-    let cellName = row.insertCell();
-    let cellPosition = row.insertCell();
-    let cellDate = row.insertCell();
-    cellName.innerHTML = arr[i].name;
-    cellPosition.innerHTML = arr[i].position;
-    cellDate.innerHTML = arr[i].date;
-  }
-}
-
-var arr = new Array();
+console.log("h2");
 saveBtn.addEventListener("click", function () {
   retrieveData();
   arr.push({
@@ -44,9 +30,9 @@ saveBtn.addEventListener("click", function () {
 
 function retrieveData() {
   let str = localStorage.getItem("localData");
-
   if (str != null) {
     arr = JSON.parse(str);
+    console.log("retrieveData ok");
   }
 }
 
@@ -59,9 +45,35 @@ genSiteBtn.addEventListener("click", function () {
 
 delBtn.addEventListener("click", function () {
   while (numberOfRows > 0) {
-    myTable.deleteRow(1);
+    // myTable.deleteRow(1);
     numberOfRows -= 1;
   }
 
   localStorage.clear();
 });
+
+function render() {
+  retrieveData();
+
+  // let myTable = document.getElementById("table");
+  let x = myTable.rows.length;
+  console.log(x);
+  while (--x) {
+    myTable.deleteRow(x);
+  }
+
+  for (let i = 0; i < arr.length; i++) {
+    let row = myTable.insertRow();
+
+    let cellName = row.insertCell();
+    let cellPosition = row.insertCell();
+    let cellDate = row.insertCell();
+
+    cellName.innerHTML = arr[i].name;
+    cellPosition.innerHTML = arr[i].position;
+    cellDate.innerHTML = arr[i].date;
+  }
+
+  if (myTable != null) {
+  }
+}
