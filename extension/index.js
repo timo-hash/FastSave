@@ -9,14 +9,13 @@ const myTable = document.getElementById("table");
 
 let numberOfRows = 0;
 let arr = new Array();
-// render();
+render();
 
-console.log("h2");
 saveBtn.addEventListener("click", function () {
   retrieveData();
   arr.push({
     name: cname.value,
-    position: position.value,
+    position: `<a target='_blank' href='${website.value}'>${position.value}</a>`,
     date: date.value,
   });
 
@@ -25,6 +24,7 @@ saveBtn.addEventListener("click", function () {
   numberOfRows += 1;
   cname.value = "";
   position.value = "";
+  website.value = "";
   date.value = "";
 });
 
