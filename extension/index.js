@@ -45,7 +45,7 @@ genSiteBtn.addEventListener("click", function () {
 
 delBtn.addEventListener("click", function () {
   while (numberOfRows > 0) {
-    // myTable.deleteRow(1);
+    myTable.deleteRow(1);
     numberOfRows -= 1;
   }
 
@@ -57,7 +57,6 @@ function render() {
 
   // let myTable = document.getElementById("table");
   let x = myTable.rows.length;
-  console.log(x);
   while (--x) {
     myTable.deleteRow(x);
   }
@@ -72,8 +71,5 @@ function render() {
     cellName.innerHTML = arr[i].name;
     cellPosition.innerHTML = arr[i].position;
     cellDate.innerHTML = arr[i].date;
-  }
-
-  if (myTable != null) {
   }
 }
