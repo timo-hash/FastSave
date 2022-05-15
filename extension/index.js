@@ -23,10 +23,6 @@ saveBtn.addEventListener("click", function () {
   var dateNotif = new Date();
   const diffTime = deadline - dateNotif;
   const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-  console.log(deadline);
-  console.log(dateNotif);
-  console.log(diffDays + " days");
-  // dateNotif.setDate(deadline.getDate - 2);
   if (diffDays == 2) {
     var notifObject = {
       type: "basic",
@@ -43,6 +39,7 @@ saveBtn.addEventListener("click", function () {
     //   iconUrl: "icons8-alert-64.png",
     // });
   }
+
   // todo: iterate through the dates
   for (var i = 1; i < myTable.rows.length; i++) {}
 
@@ -82,7 +79,6 @@ delBtn.addEventListener("click", function () {
 function render() {
   retrieveData();
 
-  // let myTable = document.getElementById("table");
   let x = myTable.rows.length;
   while (--x) {
     myTable.deleteRow(x);
