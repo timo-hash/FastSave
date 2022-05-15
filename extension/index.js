@@ -19,6 +19,33 @@ saveBtn.addEventListener("click", function () {
     date: date.value,
   });
 
+  var deadline = new Date(date.value);
+  var dateNotif = new Date();
+  const diffTime = deadline - dateNotif;
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  console.log(deadline);
+  console.log(dateNotif);
+  console.log(diffDays + " days");
+  // dateNotif.setDate(deadline.getDate - 2);
+  if (diffDays == 2) {
+    var notifObject = {
+      type: "basic",
+      title: "deadline",
+      message: "should apply soon",
+      iconUrl: "/res/icons8-alert-64.png",
+    };
+    chrome.notifications.create("chromNotif", notifObject);
+
+    // chrome.notifications.create({
+    //   type: "basic",
+    //   title: "deadline",
+    //   message: "should apply soon",
+    //   iconUrl: "icons8-alert-64.png",
+    // });
+  }
+  // todo: iterate through the dates
+  for (var i = 1; i < myTable.rows.length; i++) {}
+
   localStorage.setItem("localData", JSON.stringify(arr));
   render();
   numberOfRows += 1;

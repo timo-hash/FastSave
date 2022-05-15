@@ -1,11 +1,15 @@
 {
   "manifest_version": 3,
+
   "version": "1.0",
+
   "name": "Pinwheel",
+
+  "description": "Allows users to keep track of jobs applied",
+
   "action": {
     "default_popup": "extension/index.html"
   },
-  "permissions": [
-    "tabs"
-  ]
+
+  "permissions": ["tabs", "notifications"]
 }
