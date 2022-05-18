@@ -25,12 +25,18 @@ saveBtn.addEventListener("click", function () {
   const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
   if (diffDays == 2) {
     var notifObject = {
-      type: "basic",
+      type: "list",
       title: "deadline",
       message: "should apply soon",
       iconUrl: "/res/icons8-alert-64.png",
+      items: [
+        { title: "Item1", message: "This is item 1." },
+        { title: "Item2", message: "This is item 2." },
+        { title: "Item3", message: "This is item 3." },
+      ],
     };
     chrome.notifications.create("chromNotif", notifObject);
+    console.log(diffDays);
 
     // chrome.notifications.create({
     //   type: "basic",
